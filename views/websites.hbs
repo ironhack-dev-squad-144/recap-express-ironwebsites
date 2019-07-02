@@ -1,0 +1,26 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr class="">
+      <th>Link</th>
+      <th># of votes</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each websites}}
+    <tr>
+      <td>
+        <a href="{{this.url}}" target="_blank">{{this.name}}</a>
+      </td>
+      <td>
+        {{this.nbOfVotes}}
+      </td>
+      <td>
+        <a class="btn btn-sm btn-outline-primary" href="/vote/{{this._id}}">Vote</a>
+        <a class="btn btn-sm btn-outline-success" href="/edit-website/{{this._id}}">Edit</a>
+        <a class="btn btn-sm btn-outline-danger" href="/remove-website/{{this._id}}">Remove</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
